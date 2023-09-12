@@ -1,9 +1,6 @@
 <template>
-    <Tablon />
-    
-    
-  </template>
-  
-  <script setup>
-    import Tablon from '@/components/Tablon.vue'
-  </script>
+  <DataTable />
+</template>
+<script setup>
+  import DataTable from '@/components/DataTable.vue';
+</script>
