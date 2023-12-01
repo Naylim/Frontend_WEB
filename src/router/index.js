@@ -3,21 +3,29 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
-    path: '',
+    path: '/',
     component: () => import('@/layouts/default/Default.vue'),
-    
-    children: [
+    children: [ //RUTA DE INICIO
       {
-        path: '',
+        path: '/',
         name: 'Home',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
         component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue'),
       },
+
+      { //RUTA DE LA SECCION TABLA
+        path: '/tabla',
+        name: 'Tabla',
+        component: () => import('@/views/Tabla.vue'),
+      },
       {
-        path: '/table',
-        name: 'table', component: () => import('@/views/Tabla.vue'),
+        path: '/crud',
+        name: 'Crud',  //RUTA DE LA SECCION TABLA CRUD
+        component: () => import('@/views/Crud.vue'),
+      },
+      { //RUTA DE LA SECCION PERSONAS
+        path: '/personas',
+        name: 'Personas',
+        component: () => import('@/views/Personas.vue'),
       },
     ],
   },
