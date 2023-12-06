@@ -32,6 +32,7 @@
         <v-list-item class="text-pink-lighten-4 bg-pink-darken-2" 
         prepend-icon="mdi-table" title="Tabla CRUD" 
         value="crud" to="/crud"></v-list-item>
+<<<<<<< HEAD
 
         <v-list-item class="text-pink-lighten-4 bg-pink-darken-1" 
         prepend-icon="mdi-table" title="Tabla Personas" 
@@ -45,6 +46,8 @@
         prepend-icon="mdi-table" title="Relacion Donadores" 
         value="donadores" to="/donadores"></v-list-item>
 
+=======
+>>>>>>> 8bbd335790f1a6eb0bb43b513a66b34dca458fc2
       </v-list>
     </v-navigation-drawer>
    

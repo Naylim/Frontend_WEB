@@ -21,6 +21,7 @@ const routes = [
         path: '/crud',
         name: 'Crud',  //RUTA DE LA SECCION TABLA CRUD
         component: () => import('@/views/Crud.vue'),
+<<<<<<< HEAD
       },
       { //RUTA DE LA SECCION PERSONAS
         path: '/personas',
@@ -36,6 +37,8 @@ const routes = [
         path: '/donadores',
         name: 'Donadores',
         component: () => import('@/views/TablaDonadores.vue'),
+=======
+>>>>>>> 8bbd335790f1a6eb0bb43b513a66b34dca458fc2
       },
     ],
   },

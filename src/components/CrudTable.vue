@@ -7,7 +7,11 @@
         theme="dark"
       >
         <template v-slot:top>
+<<<<<<< HEAD
           <v-toolbar flat color="indigo">
+=======
+          <v-toolbar flat color="indigo-lighten-1">
+>>>>>>> 8bbd335790f1a6eb0bb43b513a66b34dca458fc2
             <v-toolbar-title>PUBLICACIONES (CRUD)</v-toolbar-title>
             <v-divider
             class="ms-3"
@@ -110,17 +114,33 @@
             mdi-delete
           </v-icon>
         </template>
+<<<<<<< HEAD
         
+=======
+        <template v-slot:no-data>
+          <v-btn color="red" class="mx-5 my-5" @click="cargarDatos()">
+            RECARGAR
+          </v-btn>
+        </template>
+>>>>>>> 8bbd335790f1a6eb0bb43b513a66b34dca458fc2
       </v-data-table>
     </v-card>
   </template>
   
   <script setup>
+<<<<<<< HEAD
   import { ref, onMounted } from "vue";
+=======
+  import { ref, watch, onMounted } from "vue";
+>>>>>>> 8bbd335790f1a6eb0bb43b513a66b34dca458fc2
   const cabezera = ref([]);
   const dialog = ref(false);
   const dialogDelete = ref(false);
   const articulos = ref([]);
+<<<<<<< HEAD
+=======
+  const editedIndex = ref(-1);
+>>>>>>> 8bbd335790f1a6eb0bb43b513a66b34dca458fc2
   const postsArray = ref([]);
   const usersArray = ref([]);
   const editedItem = ref({
@@ -130,7 +150,24 @@
     contenido: "",
     id: "",
   });
+<<<<<<< HEAD
 
+=======
+  const defaultItem = ref({
+    autor: "",
+    autorid: "",
+    titulo: "",
+    contenido: "",
+    id: "",
+  });
+  const fetchedItem = ref({
+    autor: "",
+    autorid: "",
+    titulo: "",
+    contenido: "",
+    id: "",
+  });
+>>>>>>> 8bbd335790f1a6eb0bb43b513a66b34dca458fc2
   
   cabezera.value = [
     { title: "Autor", align: "start", sortable: false, key: "autor" },
@@ -195,6 +232,14 @@
     this.userid = userid;
   }
   
+<<<<<<< HEAD
+=======
+  function user(id, name) {
+    this.id = id;
+    this.name = name;
+  }
+  
+>>>>>>> 8bbd335790f1a6eb0bb43b513a66b34dca458fc2
   function postItemjs(item) {
     fetch("https://jsonplaceholder.typicode.com/posts", {
       method: "POST",
