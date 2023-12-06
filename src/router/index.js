@@ -27,6 +27,16 @@ const routes = [
         name: 'Personas',
         component: () => import('@/views/Personas.vue'),
       },
+      { //RUTA DE LA SECCION PROYECTOS
+        path: '/proyectos',
+        name: 'Proyectos',
+        component: () => import('@/views/Proyectos.vue'),
+      },
+      { //RUTA DE LA SECCION PROYECTOS
+        path: '/donadores',
+        name: 'Donadores',
+        component: () => import('@/views/TablaDonadores.vue'),
+      },
     ],
   },
 ]

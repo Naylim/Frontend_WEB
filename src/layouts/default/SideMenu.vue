@@ -36,6 +36,15 @@
         <v-list-item class="text-pink-lighten-4 bg-pink-darken-1" 
         prepend-icon="mdi-table" title="Tabla Personas" 
         value="personas" to="/personas"></v-list-item>
+
+        <v-list-item class="text-pink-lighten-4 bg-pink" 
+        prepend-icon="mdi-table" title="Tabla Proyectos" 
+        value="personas" to="/proyectos"></v-list-item>
+
+        <v-list-item class="text-pink-lighten-4 bg-pink-lighten-1" 
+        prepend-icon="mdi-table" title="Relacion Donadores" 
+        value="donadores" to="/donadores"></v-list-item>
+
       </v-list>
     </v-navigation-drawer>
    

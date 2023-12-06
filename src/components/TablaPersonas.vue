@@ -101,6 +101,7 @@
   import { ref, onMounted } from "vue";
   import axios from "axios";
   
+  let per;
   const cabezera = ref([]); //cabezera de la tabla
   const dialog = ref(false); //controlan la visibilidad de los cuadros de diálogo de edición y eliminación
   const dialogDelete = ref(false);
@@ -130,21 +131,23 @@
   }
   //------------------edit y delete de front----------------------
   function editItem(item) {
+    per = item;
     this.editedIndex = personas.value.indexOf(item);
     this.editedItem = Object.assign({}, item);
     this.dialog = true;
   }
   
   function deleteItem(item) {
-    this.editedIndex = personas.value.indexOf(item);
+    per = item;
+    this.editedIndex = this.personas.indexOf(item);
     this.editedItem = Object.assign({}, item);
     this.dialogDelete = true;
   }
 
-
   function deleteItemConfirm() {
-    personas.value.splice(this.editedIndex, 1);
-    deleteItemjs(this.editItem);
+    this.personas.splice(this.editedIndex, 1);
+    console.log(per);
+    deleteItemjs(per);
     this.closeDelete();
   }
   function closeDelete() {
@@ -160,11 +163,14 @@
   }
   function save() { //-----metodo save para la ventana emergente--------
     if (this.editedIndex > -1) { //si el index es mayor a -1 edita
+      per = this.editedItem;
+      editItemjs(per);
       Object.assign(this.personas[this.editedIndex], this.editedItem);
-      editItemjs(this.editItem);
+
     } else { //si no, agrega uno nuevo
       this.personas.push(this.editedItem); 
-      postItemjs(this.editItem);
+      per = this.editedItem;
+      postItemjs(per);
     }
     this.close();
   }
@@ -200,7 +206,8 @@
   }
 
   function editItemjs(item) {
-    fetch("http://localhost:4000/personas/$item.id", {
+    console.log(item);
+    fetch("http://localhost:4000/personas/"+ item.id, {
       method: "PUT",
       body: JSON.stringify({
         id: item.id,
@@ -217,7 +224,8 @@
   }
   
   function deleteItemjs(item) {
-    fetch("http://localhost:4000/personas/$item.id", {
+
+    fetch("http://localhost:4000/personas/"+ item.id, {
       method: "DELETE",
     });
   }

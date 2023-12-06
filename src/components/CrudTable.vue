@@ -7,7 +7,7 @@
         theme="dark"
       >
         <template v-slot:top>
-          <v-toolbar flat color="indigo-lighten-1">
+          <v-toolbar flat color="indigo">
             <v-toolbar-title>PUBLICACIONES (CRUD)</v-toolbar-title>
             <v-divider
             class="ms-3"
